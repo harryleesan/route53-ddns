@@ -1,10 +1,16 @@
-FROM python:3.9-alpine
-LABEL description="An utility image that checks for changes to image tags in AWS ECR."
+FROM python:3.9-slim
+LABEL description="An utility image that checks for set the Route53 record to public ip of the kubernetes cluster."
 
-RUN apk upgrade --update
+# RUN apk upgrade --update
+#
+# RUN apk add \
+    # bash \
+    # curl \
+    # groff \
+    # jq
 
-RUN apk add \
-    bash \
+RUN apt-get update && \
+    apt-get install -y \
     curl \
     groff \
     jq
