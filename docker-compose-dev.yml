@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  test:
+    image: halosan/route53-ddns:latest
+    build: ./
+    volumes:
+      - ./:/app
+    env_file: .env
+    command: ["/bin/sh", "-c", "while true; do echo hello; sleep 30; done"]
+    container_name: route53_ddns
