@@ -24,6 +24,9 @@ spec:
             envFrom:
               - secretRef:
                   name: invoke-lambda-aws-creds
+            env:
+              - name: FUNCTION_NAME
+                value: {{ .Values.functionName }}
             resources:
               {{- toYaml .Values.resources | nindent 14 }}
           restartPolicy: OnFailure

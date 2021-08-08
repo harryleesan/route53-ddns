@@ -57,3 +57,4 @@ affinity: {}
 awsAccessKeyId: ""
 awsSecretAccessKey: ""
 awsDefaultRegion: eu-west-1
+functionName: ""
